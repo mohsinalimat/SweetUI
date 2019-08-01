@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'SweetUI_Example' do
+  pod 'SweetUI', :path => '../'
+
+  target 'SweetUI_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
