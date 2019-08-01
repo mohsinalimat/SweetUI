@@ -8,7 +8,7 @@
 // MARK: - DSL
 public extension UIView {
     
-    /// SUIKit DSL for the caller instance.
+    /// SweetUI DSL for the caller instance.
     ///
     /// ViewDSL, initialized by the caller instance.
     @objc var ui: ViewDSL { ViewDSL(self) }

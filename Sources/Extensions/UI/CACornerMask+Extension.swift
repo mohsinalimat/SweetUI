@@ -1,6 +1,6 @@
 //
 //  CACornerMask+Extension.swift
-//  Pods-SUIKit_Example
+//  SweetUI
 //
 //  Created by Maxim on 7/17/19.
 //

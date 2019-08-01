@@ -8,7 +8,7 @@
 // MARK: - DSL
 public extension UILabel {
     
-    /// SUIKit DSL for the caller instance.
+    /// SweetUI DSL for the caller instance.
     ///
     /// LabelDSL, initialized by the caller instance.
     override var ui: LabelDSL { LabelDSL(self) }

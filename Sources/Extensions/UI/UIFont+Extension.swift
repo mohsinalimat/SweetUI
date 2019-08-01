@@ -1,6 +1,6 @@
 //
 //  UIFont+Extension.swift
-//  Pods-SUIKit_Example
+//  SweetUI
 //
 //  Created by Maxim on 7/28/19.
 //

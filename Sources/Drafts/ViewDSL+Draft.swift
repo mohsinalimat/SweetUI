@@ -1,7 +1,7 @@
-//public typealias ViewDSL = SUIKit.ViewDSL
+//public typealias ViewDSL = SweetUI.ViewDSL
 //
-//public struct SUIKit {}
-//public extension SUIKit {
+//public struct SweetUI {}
+//public extension SweetUI {
 //    struct ContentBuilder<Body: UIView> {
 //        public typealias Content = Body
 //        public typealias Builder = ()->Content
@@ -9,7 +9,7 @@
 //    }
 //}
 //
-//public extension SUIKit {
+//public extension SweetUI {
 //    struct ViewDSL<Content: UIView> {
 //        private let content: Content
 //        public init(_ view: Content) {
@@ -136,7 +136,7 @@
 //    }
 //}
 //
-//public extension SUIKit.ViewDSL where Content == UILabel {
+//public extension SweetUI.ViewDSL where Content == UILabel {
 //    func text(_ text: String? = "") -> ViewDSL<Content> {
 //        modify{ $0.text = text }
 //    }

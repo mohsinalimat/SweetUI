@@ -1,6 +1,6 @@
 # SweetUI 🍯
 
-[![CI Status](https://img.shields.io/travis/mx-Cat/SUIKit.svg?style=flat)](https://travis-ci.org/mx-Cat/SUIKit) [![Version](https://img.shields.io/cocoapods/v/SUIKit.svg?style=flat)](https://cocoapods.org/pods/SUIKit) [![License](https://img.shields.io/cocoapods/l/SUIKit.svg?style=flat)](https://cocoapods.org/pods/SUIKit) [![Platform](https://img.shields.io/cocoapods/p/SUIKit.svg?style=flat)](https://cocoapods.org/pods/SUIKit)
+[![CI Status](https://img.shields.io/travis/mx-Cat/SweetUI.svg?style=flat)](https://travis-ci.org/mx-Cat/SweetUI) [![Version](https://img.shields.io/cocoapods/v/SweetUI.svg?style=flat)](https://cocoapods.org/pods/SweetUI) [![License](https://img.shields.io/cocoapods/l/SweetUI.svg?style=flat)](https://cocoapods.org/pods/SweetUI) [![Platform](https://img.shields.io/cocoapods/p/SweetUI.svg?style=flat)](https://cocoapods.org/pods/SweetUI)
 
 __SwiftUI-like declarative UIKit based framework.__
 
@@ -108,7 +108,7 @@ and run `pod install` from the terminal.
 
 ## License
 
-SUIKit is available under the MIT license. See the LICENSE file for more info.
+SweetUI is available under the MIT license. See the LICENSE file for more info.
 
 ## To-do
 

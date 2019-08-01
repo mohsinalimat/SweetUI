@@ -1,6 +1,6 @@
 //
 //  ViewDSL.swift
-//  Pods-SUIKit_Example
+//  SweetUI
 //
 //  Created by Maxim on 7/19/19.
 //
@@ -59,7 +59,7 @@ public extension ViewDSL {
     
     /// Hides the caller instance.
     ///
-    /// The same as `.isHidden = true`, but fits SUIKit's chainable API.
+    /// The same as `.isHidden = true`, but fits SweetUI's chainable API.
     /// - Returns: Caller instance.
     @discardableResult
     func hide() -> Self {
@@ -68,7 +68,7 @@ public extension ViewDSL {
     
     /// Shows the caller instance.
     ///
-    /// The same as `.isHidden = false`, but fits SUIKit's chainable API.
+    /// The same as `.isHidden = false`, but fits SweetUI's chainable API.
     /// - Returns: Caller instance.
     @discardableResult
     func show() -> Self {

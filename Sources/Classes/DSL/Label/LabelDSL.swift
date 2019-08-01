@@ -1,6 +1,6 @@
 //
 //  LabelDSL.swift
-//  Pods-SUIKit_Example
+//  SweetUI
 //
 //  Created by Maxim on 7/22/19.
 //
