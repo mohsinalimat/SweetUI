@@ -1,0 +1,22 @@
+{
+  "name": "SweetUI",
+  "version": "0.1.0",
+  "summary": "A short description of SweetUI.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Maxim Krouk/SweetUI",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Maxim Krouk": "id.maximkrouk@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/Maxim Krouk/SweetUI.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "SweetUI/Classes/**/*"
+}

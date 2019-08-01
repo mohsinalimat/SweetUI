@@ -1,0 +1,16 @@
+PODS:
+  - SweetUI (0.1.0)
+
+DEPENDENCIES:
+  - SweetUI (from `../`)
+
+EXTERNAL SOURCES:
+  SweetUI:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SweetUI: 67cee0a2c0fc9d3cccc775a257289b36d3a1f79c
+
+PODFILE CHECKSUM: 6a7ffda8aae1933e50591993ea259257e8287735
+
+COCOAPODS: 1.7.5

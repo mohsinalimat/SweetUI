@@ -1,0 +1,6 @@
+framework module SweetUI {
+  umbrella header "SweetUI-umbrella.h"
+
+  export *
+  module * { export * }
+}
