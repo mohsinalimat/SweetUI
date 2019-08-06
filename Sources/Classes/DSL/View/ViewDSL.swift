@@ -526,6 +526,15 @@ public extension ViewDSL {
         modify { $0.addGestureRecognizer(recognizer) }
     }
     
+    /// Adds a new SUITapGestureRecognizer to the view.
+    ///
+    /// - Parameter action: Action to execute on user's tap.
+    /// - Returns: Caller instance.
+    @discardableResult
+    func tapAction(_ action: @escaping UIGestureRecognizer.Closure) -> Self {
+        gestureRecognizer(SUITapGestureRecognizer(tapAction: action))
+    }
+    
 }
 
 // MARK: - Subviews
