@@ -27,9 +27,9 @@
 /// ```
 @_functionBuilder
 public struct UIViewBuilder {
-    public typealias Block = ()->UIView
+    public typealias Block = () -> UIView
     
-    public static func buildBlock(content: UIView...) -> UIView {
+    public static func buildBlock(_ content: UIView...) -> UIView {
         let view = UIView()
         content.forEach{ view.ui.add(view: $0) }
         return view
