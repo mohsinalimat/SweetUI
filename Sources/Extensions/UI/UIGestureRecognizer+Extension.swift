@@ -6,5 +6,7 @@
 //
 
 public extension UIGestureRecognizer {
+    
     typealias Closure = () -> Void
+
 }

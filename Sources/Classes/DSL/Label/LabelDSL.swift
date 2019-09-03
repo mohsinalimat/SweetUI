@@ -17,7 +17,12 @@ public class LabelDSL: ViewDSL {
     }
     
     /// The label, managed by the DSL.
-    public var label: UILabel { return view as! UILabel }
+    public var label: UILabel! { view as? UILabel }
+    
+}
+
+// MARK: - Overridable
+public extension LabelDSL {
     
     /// Provides a closure with the caller instance as a parameter.
     ///
@@ -32,10 +37,23 @@ public class LabelDSL: ViewDSL {
     /// - Parameter modification: Closure that takes the caller instance as a parameter,
     /// - Returns: Caller instance.
     @discardableResult
-    @objc override public func modify(_ modification: (UILabel)->Void) -> Self {
+    @objc override func modify(_ modification: (UILabel)->Void) -> Self {
         modification(label)
         return self
     }
+    
+    /// Adds a new SUITapGestureRecognizer to the view.
+    ///
+    /// - Parameter action: Action to execute on user's tap.
+    /// - Returns: Caller instance.
+    @discardableResult
+    @objc override func tapAction(action: @escaping (UILabel) -> Void) -> Self {
+        gestureRecognizer(SUITapGestureRecognizer { [weak label] in
+            guard let label = label else { return }
+            action(label)
+        })
+    }
+    
 }
 
 

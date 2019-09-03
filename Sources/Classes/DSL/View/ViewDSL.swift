@@ -24,20 +24,8 @@ public class ViewDSL: NSObject {
     
 }
 
-//MARK: - Other
+// MARK: - Overridable
 public extension ViewDSL {
-    
-    /// Links the outer variable to the caller instance.
-    ///
-    /// Does nothing if caller instance is not castable to a variable type,
-    /// otherwise erases outer variable and places the caller instance address into it.
-    ///
-    /// - Parameter ref: Outer variable, that will be linked to the caller instance.
-    /// - Returns: Caller instance.
-    @discardableResult
-    func link<T: UIView>(to ref: inout T?) -> Self {
-        modify{ if let view = $0 as? T { ref = view }}
-    }
     
     /// Provides a closure with the caller instance as a parameter.
     ///
@@ -56,6 +44,36 @@ public extension ViewDSL {
         modification(view)
         return self
     }
+    
+    /// Adds a new SUITapGestureRecognizer to the view.
+    ///
+    /// - Parameter action: Action to execute on user's tap.
+    /// - Returns: Caller instance.
+    @discardableResult
+    @objc func tapAction(action: @escaping (UIView) -> Void) -> Self {
+        gestureRecognizer(SUITapGestureRecognizer { [weak view] in
+            guard let view = view else { return }
+            action(view)
+        })
+    }
+    
+}
+
+//MARK: - Other
+public extension ViewDSL {
+    
+    /// Links the outer variable to the caller instance.
+    ///
+    /// Does nothing if caller instance is not castable to a variable type,
+    /// otherwise erases outer variable and places the caller instance address into it.
+    ///
+    /// - Parameter ref: Outer variable, that will be linked to the caller instance.
+    /// - Returns: Caller instance.
+    @discardableResult
+    func link<T: UIView>(to ref: inout T?) -> Self {
+        modify{ if let view = $0 as? T { ref = view }}
+    }
+    
     /// Specifies if the view is interactive.
     ///
     /// The same as `.isUserInteractionEnabled = enabled`, but fits SweetUI's chainable API.
@@ -556,7 +574,7 @@ public extension ViewDSL {
     /// - Parameter action: Action to execute on user's tap.
     /// - Returns: Caller instance.
     @discardableResult
-    func tapAction(_ action: @escaping UIGestureRecognizer.Closure) -> Self {
+    func tapAction(action: @escaping UIGestureRecognizer.Closure) -> Self {
         gestureRecognizer(SUITapGestureRecognizer(tapAction: action))
     }
     

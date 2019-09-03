@@ -31,10 +31,10 @@ class ViewController: UIViewController {
                 .font(size: 32, .semibold)
                 .size(.square(length: 100))
                 .center(view.center)
-                .tapAction { [weak self] in
+                .tapAction { [weak self] label in
                     guard let self = self else { return }
                     self.counter += 1
-                    self.label?.text = "\(self.counter)"
+                    label.text = "\(self.counter)"
                 }
                 .link(to: &label)
                 .view
