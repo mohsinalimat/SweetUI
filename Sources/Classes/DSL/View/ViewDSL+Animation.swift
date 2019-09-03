@@ -68,14 +68,10 @@ fileprivate extension ViewDSL {
         var animations = animations
         let animation = animations.removeFirst()
         
-        UIView.animate(withDuration: animation.duration,
-                       delay: animation.delay,
-                       options: animation.options,
-                       animations: { animation.operations(view) },
-                       completion: {
-                        animation.completion?($0)
-                        self.animate(view: view, animations: animations)
-        })
+        animation.animator(for: view, completion: { [weak self] in
+            guard let self = self else { return }
+            self.animate(view: view, animations: animations)
+        }).startAnimation()
     }
     
     func animate(view: UIView, animations: [Animation], inParallel: Bool) {
@@ -84,14 +80,26 @@ fileprivate extension ViewDSL {
             return
         }
         
-        animations.forEach { animation in
-            UIView.animate(withDuration: animation.duration,
-                           delay: animation.delay,
-                           options: animation.options,
-                           animations: { animation.operations(view) },
-                           completion: animation.completion)
-        }
+        animations.forEach { $0.animator(for: view).startAnimation() }
     }
     
 }
 
+fileprivate extension Animation {
+    
+    func animator(for view: UIView, completion: (() -> Void)? = .none) -> UIViewPropertyAnimator {
+        let totalDuration = delay + duration
+        let delayFactor = delay / totalDuration
+        let animator = UIViewPropertyAnimator(duration: totalDuration, curve: curve, animations: .none)
+        
+        animator.addAnimations({ self.operations(view) }, delayFactor: CGFloat(delayFactor))
+        
+        animator.addCompletion {
+            self.completion?($0)
+            completion?()
+        }
+        
+        return animator
+    }
+    
+}
