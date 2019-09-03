@@ -14,7 +14,7 @@ public extension Animation {
         .init(duration: duration,
               delay: delay,
               curve: curve,
-              operations: { $0.alpha = 1 },
+              operations: { $0.alpha = 0 },
               completion: completion)
     }
     
@@ -38,6 +38,30 @@ public extension Animation {
               delay: delay,
               curve: curve,
               operations: { $0.bounds.size = size },
+              completion: completion)
+    }
+    
+    static func move(origin point: CGPoint,
+                     duration: TimeInterval = 0.6,
+                     delay: TimeInterval = 0,
+                     curve: UIViewAnimationCurve = .linear,
+                     completion: ((UIViewAnimatingPosition) -> Void)? = .none) -> Animation {
+        .init(duration: duration,
+              delay: delay,
+              curve: curve,
+              operations: { $0.frame.origin = point },
+              completion: completion)
+    }
+    
+    static func move(center point: CGPoint,
+                     duration: TimeInterval = 0.6,
+                     delay: TimeInterval = 0,
+                     curve: UIViewAnimationCurve = .linear,
+                     completion: ((UIViewAnimatingPosition) -> Void)? = .none) -> Animation {
+        .init(duration: duration,
+              delay: delay,
+              curve: curve,
+              operations: { $0.center = point },
               completion: completion)
     }
     
