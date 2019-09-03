@@ -9,6 +9,10 @@
 import SweetUI
 
 class ViewController: UIViewController {
+    
+    private(set) var label: UILabel?
+    
+    private var counter: Int = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +25,18 @@ class ViewController: UIViewController {
                 .cornerRadius(10)
                 .alpha(0)
                 .animate(.fadeIn(5, curve: .easeInOut))
+                .view
+            UILabel(text: "0", alignment: .center).ui
+                .interaction(enabled: true)
+                .font(size: 32, .semibold)
+                .size(.square(length: 100))
+                .center(view.center)
+                .tapAction { [weak self] in
+                    guard let self = self else { return }
+                    self.counter += 1
+                    self.label?.text = "\(self.counter)"
+                }
+                .link(to: &label)
                 .view
         }
     }
