@@ -24,7 +24,7 @@
 		E1F82ED722F39B55008C2D13 /* LabelDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F82EC522F39B54008C2D13 /* LabelDSL.swift */; };
 		E1F82ED822F39B55008C2D13 /* ViewDSL.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F82EC722F39B54008C2D13 /* ViewDSL.swift */; };
 		E1F82ED922F39B55008C2D13 /* ViewDSL+Animation.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F82EC822F39B54008C2D13 /* ViewDSL+Animation.swift */; };
-		E1F82EDA22F39B55008C2D13 /* CG+UIScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F82ECB22F39B54008C2D13 /* CG+UIScreen.swift */; };
+		E1F82EDA22F39B55008C2D13 /* CG+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F82ECB22F39B54008C2D13 /* CG+Extension.swift */; };
 		E1F82EDB22F39B55008C2D13 /* UIFont+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F82ECC22F39B55008C2D13 /* UIFont+Extension.swift */; };
 		E1F82EDC22F39B55008C2D13 /* CACornerMask+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F82ECD22F39B55008C2D13 /* CACornerMask+Extension.swift */; };
 		E1F82EDD22F39B55008C2D13 /* Collection+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F82ECF22F39B55008C2D13 /* Collection+Extension.swift */; };
@@ -104,7 +104,7 @@
 		E1F82EC522F39B54008C2D13 /* LabelDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelDSL.swift; sourceTree = "<group>"; };
 		E1F82EC722F39B54008C2D13 /* ViewDSL.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewDSL.swift; sourceTree = "<group>"; };
 		E1F82EC822F39B54008C2D13 /* ViewDSL+Animation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewDSL+Animation.swift"; sourceTree = "<group>"; };
-		E1F82ECB22F39B54008C2D13 /* CG+UIScreen.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CG+UIScreen.swift"; sourceTree = "<group>"; };
+		E1F82ECB22F39B54008C2D13 /* CG+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CG+Extension.swift"; sourceTree = "<group>"; };
 		E1F82ECC22F39B55008C2D13 /* UIFont+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIFont+Extension.swift"; sourceTree = "<group>"; };
 		E1F82ECD22F39B55008C2D13 /* CACornerMask+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CACornerMask+Extension.swift"; sourceTree = "<group>"; };
 		E1F82ECF22F39B55008C2D13 /* Collection+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Collection+Extension.swift"; sourceTree = "<group>"; };
@@ -357,7 +357,7 @@
 		E1F82ECA22F39B54008C2D13 /* UI */ = {
 			isa = PBXGroup;
 			children = (
-				E1F82ECB22F39B54008C2D13 /* CG+UIScreen.swift */,
+				E1F82ECB22F39B54008C2D13 /* CG+Extension.swift */,
 				E1F82ECC22F39B55008C2D13 /* UIFont+Extension.swift */,
 				E1F82ECD22F39B55008C2D13 /* CACornerMask+Extension.swift */,
 				E1BE9C5922F3ABA30027B023 /* UIGestureRecognizer+Extension.swift */,
@@ -545,7 +545,7 @@
 				E1F82EDD22F39B55008C2D13 /* Collection+Extension.swift in Sources */,
 				E1F82ED522F39B55008C2D13 /* Animation+Templates.swift in Sources */,
 				E1BE9C5A22F3ABA30027B023 /* UIGestureRecognizer+Extension.swift in Sources */,
-				E1F82EDA22F39B55008C2D13 /* CG+UIScreen.swift in Sources */,
+				E1F82EDA22F39B55008C2D13 /* CG+Extension.swift in Sources */,
 				E1F82ED322F39B55008C2D13 /* UILabel+SweetUI.swift in Sources */,
 				E1F82ED422F39B55008C2D13 /* UIView+SweetUI.swift in Sources */,
 				E1BE9C5822F3AB6B0027B023 /* SUITapGestureRecognizer.swift in Sources */,
