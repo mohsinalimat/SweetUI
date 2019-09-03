@@ -56,6 +56,15 @@ public extension ViewDSL {
         modification(view)
         return self
     }
+    /// Specifies if the view is interactive.
+    ///
+    /// The same as `.isUserInteractionEnabled = enabled`, but fits SweetUI's chainable API.
+    /// - Parameter enabled: New value for the property.
+    /// - Returns: Caller instance.
+    @discardableResult
+    func interaction(enabled: Bool) -> Self {
+        modify{ $0.isUserInteractionEnabled = enabled }
+    }
     
     /// Hides the caller instance.
     ///
@@ -548,7 +557,17 @@ public extension ViewDSL {
     /// - Returns: Caller instance.
     @discardableResult
     func add(@SweetUI.UIViewBuilder content: SweetUI.UIViewBuilder.Block) -> Self {
-        add(view: content())
+        modify {
+            let content = content()
+            $0.ui.add(view: content)
+            content.translatesAutoresizingMaskIntoConstraints = false
+            NSLayoutConstraint.activate([
+                content.topAnchor.constraint(equalTo: $0.topAnchor),
+                content.bottomAnchor.constraint(equalTo: $0.bottomAnchor),
+                content.leadingAnchor.constraint(equalTo: $0.leadingAnchor),
+                content.trailingAnchor.constraint(equalTo: $0.trailingAnchor)])
+        }
+        //add(view: content())
     }
     
     /// Adds subviews to a view.
