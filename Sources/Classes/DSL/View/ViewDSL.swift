@@ -124,8 +124,23 @@ public extension ViewDSL {
     /// Sets the corner radius of the view by masking specified corners.
     ///
     /// - Parameter value: A new cornerRadius of the caller instance's layer.
+    /// - Returns: Caller instance.
+    @discardableResult
+    func cornerRadius(_ value: CGFloat) -> Self {
+        modify {
+            $0.layer.cornerRadius = value
+            if #available(iOS 11.0, *) {
+                $0.layer.maskedCorners = .init(.all)
+            }
+        }
+    }
+    
+    /// Sets the corner radius of the view by masking specified corners.
+    ///
+    /// - Parameter value: A new cornerRadius of the caller instance's layer.
     /// - Parameter corners: Set of corners to create a new maskedCorners value of the caller instance's layer.
     /// - Returns: Caller instance.
+    @available(iOS 11.0, *)
     @discardableResult
     func cornerRadius(_ value: CGFloat, corners: CACornerMask.Corner...) -> Self {
         cornerRadius(value, corners: Set(corners))
@@ -136,8 +151,9 @@ public extension ViewDSL {
     /// - Parameter value: A new cornerRadius of the caller instance's layer.
     /// - Parameter corners: Set of corners to create a new maskedCorners value of the caller instance's layer. (`.all` by default).
     /// - Returns: Caller instance.
+    @available(iOS 11.0, *)
     @discardableResult
-    func cornerRadius(_ value: CGFloat, corners: CACornerMask.Corners = .all) -> Self {
+    func cornerRadius(_ value: CGFloat, corners: CACornerMask.Corners) -> Self {
         modify {
             $0.layer.cornerRadius = value
             $0.layer.maskedCorners = .init(corners)
