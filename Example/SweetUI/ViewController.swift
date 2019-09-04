@@ -11,6 +11,7 @@ import SweetUI
 class ViewController: UIViewController {
     
     private(set) var label: UILabel?
+    private(set) var rect: UIView?
     
     private var counter: Int = 0
 
@@ -19,25 +20,33 @@ class ViewController: UIViewController {
         
         view.ui.add {
             UIView().ui
-                .background(color: .red)
-                .size(.square(length: 100))
-                .center(view.center)
+                .background(color: .init(white: 0.2, alpha: 1)).alpha(0)
                 .cornerRadius(10)
-                .alpha(0)
-                .animate(.fadeIn(5, curve: .easeInOut))
-                .view
-            UILabel(text: "0", alignment: .center).ui
-                .interaction(enabled: true)
+                .size(.square(length: 100))
+                .center(.init(x: view.center.x, y: -50))
+                .animate(.parallel,
+                         .move(center: view.center, duration: 5),
+                         .fadeIn(5, curve: .easeInOut))
+                .link(to: &rect)
+            UILabel(text: "0", alignment: .center, color: .white).ui
                 .font(size: 32, .semibold)
                 .size(.square(length: 100))
-                .center(view.center)
+                .center(.init(x: view.center.x, y: -50))
+                .animate(.parallel, .move(center: view.center, duration: 5), .fadeIn(5, curve: .easeInOut))
+                .interaction(enabled: true)
                 .tapAction { [weak self] label in
                     guard let self = self else { return }
                     self.counter += 1
                     label.text = "\(self.counter)"
+                    if self.counter.isMultiple(of: 10) {
+                        self.rect?.ui.animate(.fadeOut(1.2, completion: { _ in
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                                self.rect?.ui.animate(.fadeIn())
+                            }
+                        }))
+                    }
                 }
                 .link(to: &label)
-                .view
         }
     }
 

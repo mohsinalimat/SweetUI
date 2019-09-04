@@ -14,6 +14,10 @@
 		6B123363AF291DFA1A4EA882B15360C1 /* Pods-SweetUI_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B4EFCAA45C1B91AE76E7241EA80D4624 /* Pods-SweetUI_Example-dummy.m */; };
 		9F04D12CE5641C746ABDCBF368277934 /* Pods-SweetUI_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = FEDF029B932D8DDE16A2A659C1ECCBD4 /* Pods-SweetUI_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		DA9E4B3FEAF1419F02B59DA8D392A68A /* Pods-SweetUI_Tests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5C21A9BEA56973CF42FD5122CE86F0DC /* Pods-SweetUI_Tests-dummy.m */; };
+		E1BC419A231FAAFC00BAFB02 /* ViewDSL+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BC4199231FAAFC00BAFB02 /* ViewDSL+Shadow.swift */; };
+		E1BC41A2231FAC0300BAFB02 /* UIViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BC419B231FAB1D00BAFB02 /* UIViewProvider.swift */; };
+		E1BC41A3231FAC2600BAFB02 /* ViewDSL+UIVIewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BC41A0231FABA400BAFB02 /* ViewDSL+UIVIewProvider.swift */; };
+		E1BC41A4231FAC2E00BAFB02 /* UIView+UIViewProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BC419E231FAB6100BAFB02 /* UIView+UIViewProvider.swift */; };
 		E1BE9C5822F3AB6B0027B023 /* SUITapGestureRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BE9C5722F3AB6B0027B023 /* SUITapGestureRecognizer.swift */; };
 		E1BE9C5A22F3ABA30027B023 /* UIGestureRecognizer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1BE9C5922F3ABA30027B023 /* UIGestureRecognizer+Extension.swift */; };
 		E1F82ED222F39B55008C2D13 /* UIViewBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F82EBC22F39B54008C2D13 /* UIViewBuilder.swift */; };
@@ -94,6 +98,10 @@
 		DC55D9F6D44CCEF87C1C4D258C25A061 /* SweetUI-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SweetUI-umbrella.h"; sourceTree = "<group>"; };
 		DF25241E613E4AFD322E0309EC0E7971 /* SweetUI-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SweetUI-dummy.m"; sourceTree = "<group>"; };
 		E148A7222F63D37E5A1875C9979D10A9 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
+		E1BC4199231FAAFC00BAFB02 /* ViewDSL+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewDSL+Shadow.swift"; sourceTree = "<group>"; };
+		E1BC419B231FAB1D00BAFB02 /* UIViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewProvider.swift; sourceTree = "<group>"; };
+		E1BC419E231FAB6100BAFB02 /* UIView+UIViewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+UIViewProvider.swift"; sourceTree = "<group>"; };
+		E1BC41A0231FABA400BAFB02 /* ViewDSL+UIVIewProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ViewDSL+UIVIewProvider.swift"; sourceTree = "<group>"; };
 		E1BE9C5722F3AB6B0027B023 /* SUITapGestureRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SUITapGestureRecognizer.swift; sourceTree = "<group>"; };
 		E1BE9C5922F3ABA30027B023 /* UIGestureRecognizer+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIGestureRecognizer+Extension.swift"; sourceTree = "<group>"; };
 		E1F82EBC22F39B54008C2D13 /* UIViewBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewBuilder.swift; sourceTree = "<group>"; };
@@ -264,6 +272,16 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		E1BC419D231FAB4700BAFB02 /* UIViewProvider */ = {
+			isa = PBXGroup;
+			children = (
+				E1BC419B231FAB1D00BAFB02 /* UIViewProvider.swift */,
+				E1BC419E231FAB6100BAFB02 /* UIView+UIViewProvider.swift */,
+				E1BC41A0231FABA400BAFB02 /* ViewDSL+UIVIewProvider.swift */,
+			);
+			path = UIViewProvider;
+			sourceTree = "<group>";
+		};
 		E1BE9C5622F3AB180027B023 /* GestureRecognizers */ = {
 			isa = PBXGroup;
 			children = (
@@ -322,6 +340,7 @@
 		E1F82EC322F39B54008C2D13 /* DSL */ = {
 			isa = PBXGroup;
 			children = (
+				E1BC419D231FAB4700BAFB02 /* UIViewProvider */,
 				E1F82EC622F39B54008C2D13 /* View */,
 				E1F82EC422F39B54008C2D13 /* Label */,
 			);
@@ -341,6 +360,7 @@
 			children = (
 				E1F82EC722F39B54008C2D13 /* ViewDSL.swift */,
 				E1F82EC822F39B54008C2D13 /* ViewDSL+Animation.swift */,
+				E1BC4199231FAAFC00BAFB02 /* ViewDSL+Shadow.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -526,6 +546,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6B123363AF291DFA1A4EA882B15360C1 /* Pods-SweetUI_Example-dummy.m in Sources */,
+				E1BC419A231FAAFC00BAFB02 /* ViewDSL+Shadow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -544,6 +565,8 @@
 				E1F82EDC22F39B55008C2D13 /* CACornerMask+Extension.swift in Sources */,
 				E1F82EDD22F39B55008C2D13 /* Collection+Extension.swift in Sources */,
 				E1F82ED522F39B55008C2D13 /* Animation+Templates.swift in Sources */,
+				E1BC41A3231FAC2600BAFB02 /* ViewDSL+UIVIewProvider.swift in Sources */,
+				E1BC41A2231FAC0300BAFB02 /* UIViewProvider.swift in Sources */,
 				E1BE9C5A22F3ABA30027B023 /* UIGestureRecognizer+Extension.swift in Sources */,
 				E1F82EDA22F39B55008C2D13 /* CG+Extension.swift in Sources */,
 				E1F82ED322F39B55008C2D13 /* UILabel+SweetUI.swift in Sources */,
@@ -551,6 +574,7 @@
 				E1BE9C5822F3AB6B0027B023 /* SUITapGestureRecognizer.swift in Sources */,
 				E1F82ED822F39B55008C2D13 /* ViewDSL.swift in Sources */,
 				E1F82EDB22F39B55008C2D13 /* UIFont+Extension.swift in Sources */,
+				E1BC41A4231FAC2E00BAFB02 /* UIView+UIViewProvider.swift in Sources */,
 				E1F82ED722F39B55008C2D13 /* LabelDSL.swift in Sources */,
 				5DAE424AB92207CBC5B338F89FE433E0 /* SweetUI-dummy.m in Sources */,
 				E1F82ED622F39B55008C2D13 /* Animation.swift in Sources */,

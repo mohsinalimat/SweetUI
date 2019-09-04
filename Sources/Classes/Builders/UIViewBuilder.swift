@@ -30,9 +30,9 @@ public struct UIViewBuilder {
     
     public typealias Block = () -> UIView
     
-    public static func buildBlock(_ content: UIView...) -> UIView {
+    public static func buildBlock(_ content: UIViewProvider...) -> UIView {
         let view = UIView()
-        content.forEach{ view.ui.add(view: $0) }
+        content.forEach{ view.ui.add(view: $0.view) }
         return view
     }
     
