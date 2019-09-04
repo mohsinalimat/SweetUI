@@ -14,7 +14,9 @@ public class SUIButton: UIButton {
     public init(title: String, action: @escaping () -> Void) {
         self.action = action
         super.init(frame: .zero)
+        let color = #colorLiteral(red: 0.03921568627, green: 0.5176470588, blue: 1, alpha: 1)
         self.setTitle(title, for: .normal)
+        self.setTitleColor(color, for: .normal)
         self.addTarget(self, action: #selector(handleTap), for: .touchUpInside)
     }
     

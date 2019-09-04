@@ -21,7 +21,7 @@ class ViewController: UIViewController {
         view.ui.add {
             UIView().ui
                 .background(color: .init(white: 0.2, alpha: 1)).alpha(0)
-                .shadow(.init(.black))
+                .shadow(.black)
                 .cornerRadius(10)
                 .size(.square(length: 100))
                 .center(.init(x: view.center.x, y: -50))
@@ -35,19 +35,31 @@ class ViewController: UIViewController {
                 .center(.init(x: view.center.x, y: -50))
                 .animate(.parallel, .move(center: view.center, duration: 5), .fadeIn(5, curve: .easeInOut))
                 .interaction(enabled: true)
-                .tapAction { [weak self] label in
+                .tapAction { [weak self] _ in
                     guard let self = self else { return }
                     self.counter += 1
-                    label.text = "\(self.counter)"
-                    if self.counter.isMultiple(of: 10) {
-                        self.rect?.ui.animate(.fadeOut(1.2, completion: { _ in
-                            DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
-                                self.rect?.ui.animate(.fadeIn())
-                            }
-                        }))
-                    }
+                    self.updateLabel()
                 }
                 .link(to: &label)
+            SUIButton(title: "Decrement") { [weak self] in
+                guard let self = self else { return }
+                self.counter -= 1
+                self.updateLabel()
+            }.ui
+                .size(.init(width: 100, height: 30))
+                .center(.init(x: view.center.x, y: view.center.y + 100))
+        }
+    }
+    
+    func updateLabel() {
+        label?.text = "\(counter)"
+        if counter.isMultiple(of: 10) {
+            rect?.ui.animate(.fadeOut(1.2, completion: { [weak self] _ in
+                DispatchQueue.main.asyncAfter(deadline: .now() + 1) {
+                    guard let self = self else { return }
+                    self.rect?.ui.animate(.fadeIn())
+                }
+            }))
         }
     }
 
