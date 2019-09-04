@@ -21,6 +21,7 @@ class ViewController: UIViewController {
         view.ui.add {
             UIView().ui
                 .background(color: .init(white: 0.2, alpha: 1)).alpha(0)
+                .shadow(.init(.black))
                 .cornerRadius(10)
                 .size(.square(length: 100))
                 .center(.init(x: view.center.x, y: -50))
