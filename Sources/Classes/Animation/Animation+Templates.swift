@@ -9,7 +9,7 @@ public extension Animation {
     
     static func fadeOut(_ duration: TimeInterval = 0.6,
                         delay: TimeInterval = 0,
-                        curve: UIViewAnimationCurve = .linear,
+                        curve: UIView.AnimationCurve = .linear,
                         completion: ((UIViewAnimatingPosition) -> Void)? = .none) -> Animation {
         .init(duration: duration,
               delay: delay,
@@ -20,7 +20,7 @@ public extension Animation {
     
     static func fadeIn(_ duration: TimeInterval = 0.6,
                        delay: TimeInterval = 0,
-                       curve: UIViewAnimationCurve = .linear,
+                       curve: UIView.AnimationCurve = .linear,
                        completion: ((UIViewAnimatingPosition) -> Void)? = .none) -> Animation {
         .init(duration: duration,
               delay: delay,
@@ -32,7 +32,7 @@ public extension Animation {
     static func resize(to size: CGSize,
                        duration: TimeInterval = 0.6,
                        delay: TimeInterval = 0,
-                       curve: UIViewAnimationCurve = .linear,
+                       curve: UIView.AnimationCurve = .linear,
                        completion: ((UIViewAnimatingPosition) -> Void)? = .none) -> Animation {
         .init(duration: duration,
               delay: delay,
@@ -44,7 +44,7 @@ public extension Animation {
     static func move(origin point: CGPoint,
                      duration: TimeInterval = 0.6,
                      delay: TimeInterval = 0,
-                     curve: UIViewAnimationCurve = .linear,
+                     curve: UIView.AnimationCurve = .linear,
                      completion: ((UIViewAnimatingPosition) -> Void)? = .none) -> Animation {
         .init(duration: duration,
               delay: delay,
@@ -56,7 +56,7 @@ public extension Animation {
     static func move(center point: CGPoint,
                      duration: TimeInterval = 0.6,
                      delay: TimeInterval = 0,
-                     curve: UIViewAnimationCurve = .linear,
+                     curve: UIView.AnimationCurve = .linear,
                      completion: ((UIViewAnimatingPosition) -> Void)? = .none) -> Animation {
         .init(duration: duration,
               delay: delay,

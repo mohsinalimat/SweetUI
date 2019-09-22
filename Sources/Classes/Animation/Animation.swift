@@ -28,7 +28,7 @@ public struct Animation {
     /// A value of 0 will begin the animations immediately.
     public let delay: TimeInterval
     
-    public let curve: UIViewAnimationCurve
+    public let curve: UIView.AnimationCurve
     
     /// A block object containing the changes to commit to the views.
     ///
