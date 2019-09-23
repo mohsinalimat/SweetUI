@@ -27,7 +27,6 @@ class ViewController: UIViewController {
                     UILabel(text: "1").ui
                         .frame(x: 0, y: 44, width: CGRect.screen.width, height: 20)
                         .link(to: &label)
-                        .view
                     UILabel(text: "2").ui
                         .frame(x: 44, y: 88, width: CGRect.screen.width, height: 20)
                 }
