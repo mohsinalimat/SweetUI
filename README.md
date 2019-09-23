@@ -1,6 +1,6 @@
 # SweetUI 🍯
 
-[![CI Status](https://img.shields.io/travis/mx-Cat/SweetUI.svg?style=flat)](https://travis-ci.org/mx-Cat/SweetUI) [![Version](https://img.shields.io/cocoapods/v/SweetUI.svg?style=flat)](https://cocoapods.org/pods/SweetUI) [![License](https://img.shields.io/cocoapods/l/SweetUI.svg?style=flat)](https://cocoapods.org/pods/SweetUI) [![Platform](https://img.shields.io/cocoapods/p/SweetUI.svg?style=flat)](https://cocoapods.org/pods/SweetUI)
+[![CI Status](https://travis-ci.org/maximkrouk/SweetUI.svg?branch=master)](https://travis-ci.org/mx-Cat/SweetUI) [![Version](https://img.shields.io/cocoapods/v/SweetUI.svg?style=flat)](https://cocoapods.org/pods/SweetUI) [![License](https://img.shields.io/cocoapods/l/SweetUI.svg?style=flat)](https://cocoapods.org/pods/SweetUI) [![Platform](https://img.shields.io/cocoapods/p/SweetUI.svg?style=flat)](https://cocoapods.org/pods/SweetUI)
 
 __SwiftUI-like declarative UIKit based framework.__
 
