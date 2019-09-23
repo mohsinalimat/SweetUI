@@ -13,4 +13,4 @@ branches:
 script:
 - gem install cocoapods
 - pod install --project-directory=Example
-- pod lib lint
+- pod lib lint --allow-warnings
