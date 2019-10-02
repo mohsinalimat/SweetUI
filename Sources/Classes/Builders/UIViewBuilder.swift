@@ -31,9 +31,16 @@ public struct UIViewBuilder {
     public typealias Block = () -> UIView
     
     public static func buildBlock(_ content: UIViewProvider...) -> UIView {
+        guard content.count != 1 else { return content[0].view }
         let view = UIView()
         content.forEach{ view.ui.add(view: $0.view) }
         return view
     }
+    
+    public static func buildIf(_ content: UIViewProvider?) -> UIView { content?.view ?? UIView() }
+
+    public static func buildEither(first: UIViewProvider) -> UIView { first.view }
+
+    public static func buildEither(second: UIViewProvider) -> UIView { second.view }
     
 }
