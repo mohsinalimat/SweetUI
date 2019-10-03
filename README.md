@@ -103,12 +103,13 @@ SweetUI is available under the MIT license. See the LICENSE file for more info.
 
 ## To-do
 
+- Conditional building ✅
 - Add DSL's for every UIView subclass.
-- Add convenience methods for user interaction, such as `tapAction(_ execute: ()->Void)`
+- Add convenience methods for user interaction, such as `tapAction(_ execute: ()->Void)` ✅
 - Complete xcode documentation.
 - Provide more examples.
-- Add API for shadows.
-- Add more animation templates.
+- Add API for shadows. ✅
+- Add more animation templates. ✅
 - Add layout engine.
 - Make some API improvements.
 - Add some classes like SUIGradientView.
